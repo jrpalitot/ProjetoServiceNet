@@ -1,3 +1,6 @@
+<?php 
+	include ('config/config.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +15,7 @@
 <body>
 	<div class="container">
 		<div class="page-header">
-			<h1><img src="img/logo.png"> CRUDE User System</h1>
+			<h1><img src="img/logo.png"> CRUD User System</h1>
 		</div>
 		<ul class="nav nav-tabs">
 			<?php

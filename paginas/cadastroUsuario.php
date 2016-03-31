@@ -1,11 +1,3 @@
-
-<?php 
-	# Idade Mínima para cadastrar um usuário
-	$idadeMinima = 0; // em anos 
-	$dataMinima = date("Y-m-d", strtotime("-".$idadeMinima." Years - 2 day"));
-?>
-
-
 <h2>Cadastro de Usuários</h2>
 
 <hr>

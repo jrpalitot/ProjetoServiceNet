@@ -23,7 +23,7 @@
 		
 		# PÁGINA PADRÃO
 		default:
-			echo "Página Inicial";
+			include('paginas/inicio.php');
 			break;
 	}
 ?>

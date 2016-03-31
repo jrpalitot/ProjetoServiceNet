@@ -1,38 +1,42 @@
-
 <?php 
-	# Idade Mínima para cadastrar um usuário
-	$idadeMinima = 0; // em anos
-	$dataMinima = date("Y-m-d", strtotime("-".$idadeMinima." Years"));
+	$bd = BDConecta();
+
+	$matricula = antiInject(@$_GET['mat']);
+	$sql = "SELECT matricula, nome, email, dataNasc FROM usuario WHERE matricula = '".$matricula."' LIMIT 1";
+
+	foreach ($bd->query($sql) as $usuario) { 
+
 ?>
+	<h2>Editar Usuário - <?=$matricula?></h2>
 
-
-<h2>Editar Usuário - 2016050001</h2>
-
-<hr>
-
-<div class="col-xs-6">
-	<h4>
-		<span class="glyphicon glyphicon-user btn-sm" aria-hidden="true"></span>
-		Dados Pessoais</h4>
 	<hr>
-	<form method="post" action="?pagina=editUser">
-		<div class="form-group">
-			<label for="nome">Nome:</label>
-			<input onkeyup="desbloquearBotao()" type="text" class="form-control" id="nome" name="nome" value="Nome">
-		</div>
-		<div class="form-group">
-			<label for="dataNasc">Data de Nascimento:</label>
-			<input max="<?=$dataMinima?>" onchange="desbloquearBotao()" type="date" class="form-control" id="dataNasc" name="dataNasc" value="1995-08-24">
-		</div>
-		<div class="form-group">
-			<label for="email">Email:</label>
-			<input onkeyup="desbloquearBotao()" type="email" class="form-control" id="email" name="email" value="email@email.com.br">
-		</div>
-		<div id="preencha" class="alert alert-warning" role="alert"></div>
 
-		<button id="botao" type="submit" class="btn btn-success">Atualizar dados</button>
-	</form>
-</div>
+	<div class="col-xs-6">
+		<h4>
+			<span class="glyphicon glyphicon-user btn-sm" aria-hidden="true"></span>
+			Dados Pessoais</h4>
+		<hr>
+		<form method="post" action="?pagina=editUser">
+			<div class="form-group">
+				<label for="nome">Nome:</label>
+				<input onkeyup="desbloquearBotao()" type="text" class="form-control" id="nome" name="nome" value="<?=$usuario['nome']?>">
+			</div>
+			<div class="form-group">
+				<label for="dataNasc">Data de Nascimento:</label>
+				<input max="<?=$dataMinima?>" onchange="desbloquearBotao()" type="date" class="form-control" id="dataNasc" name="dataNasc" value="<?=$usuario['dataNasc']?>">
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input onkeyup="desbloquearBotao()" type="email" class="form-control" id="email" name="email" value="<?=$usuario['email']?>">
+			</div>
+			<div id="preencha" class="alert alert-warning" role="alert"></div>
+
+			<button id="botao" type="submit" class="btn btn-success">Atualizar dados</button>
+		</form>
+	</div>
+
+<?php } ?>
+
 <div class="col-xs-6">
 	<h4>
 		<span class="glyphicon glyphicon-lock btn-sm" aria-hidden="true"></span>
