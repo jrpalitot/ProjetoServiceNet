@@ -6,7 +6,11 @@
 	# CONEXÃO COM O BANCO
 	function BDconecta(){
 		try{
-			$bd = new PDO("mysql:host=127.0.0.1;dbname=servicenet", "root", "");
+			$host = "127.0.0.1";
+			$dbname = "servicenet";
+			$user = "root";
+			$password = "";
+			$bd = new PDO("mysql:host=$host;dbname=$dbname", "$user", "$password");
 		}catch(PDOException $e){
 			echo "ERROR: " . $e->getmessenger();
 			die();
