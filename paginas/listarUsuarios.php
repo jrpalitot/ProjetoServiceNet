@@ -45,7 +45,7 @@
 		<form method="get" action="index.php">
 			<div class="input-group">
 				<input type="hidden" name="pagina" value="ListarUsuarios"/> 
-				<input name="Pesquisa" type="text" class="form-control" placeholder="Pesquisar por nome">
+				<input name="Pesquisa" type="text" class="form-control" placeholder="Pesquisar por nome" value="<?=$pesquisa?>">
 				<input type="hidden" name="OrderBy" value="<?=$order+0?>"/> 
 				<span class="input-group-btn">
 					<button type="submit" class="btn btn-default" type="button">
