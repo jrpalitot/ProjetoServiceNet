@@ -1,7 +1,6 @@
 <h2>Lista de Usuários</h2>
 <hr>
-
-Campos: nome, data de nascimento, e-mail, senha e matricula (gerada pelo sistema);
+<a href="#">Listar pelo nome</a>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -19,7 +18,7 @@ Campos: nome, data de nascimento, e-mail, senha e matricula (gerada pelo sistema
 			<td>Doe</td>
 			<td>john@example.com</td>
 			<td>
-				<button id="botao" type="submit" class="btn btn-primary">Editar</button>
+				<a href="?pagina=EditarUsuario" class="btn btn-primary">Editar</a>
 				<button id="botao" type="submit" class="btn btn-danger">Excluir</button>
 			</td>
 		</tr>

@@ -1,8 +1,8 @@
 
 <?php 
 	# Idade Mínima para cadastrar um usuário
-	$idadeMinima = 16; 
-	$dataMinima = date("Y-m-d", strtotime("-".$idadeMinima." Years"));
+	$idadeMinima = 0; // em anos 
+	$dataMinima = date("Y-m-d", strtotime("-".$idadeMinima." Years - 2 day"));
 ?>
 
 
@@ -11,7 +11,6 @@
 <hr>
 
 <div class="col-sm-offset-4 col-sm-4">
-	<p>Idade mínima: <b><?=$idadeMinima?> anos</b></p>
 	<form method="post" action="?pagina=insertUser">
 		<div class="form-group">
 			<label for="nome">Nome:</label>
@@ -19,7 +18,7 @@
 		</div>
 		<div class="form-group">
 			<label for="dataNasc">Data de Nascimento:</label>
-			<input max="<?=$dataMinima?>" onchange="desbloquearBotao()" type="date" class="form-control" id="dataNasc" name="dataNasc">
+			<input placeholder="Formato: <?=date("Y-m-d")?>" max="<?=$dataMinima?>" onchange="desbloquearBotao()" type="date" class="form-control" id="dataNasc" name="dataNasc">
 		</div>
 		<div class="form-group">
 			<label for="email">Email:</label>
@@ -34,7 +33,7 @@
 			<input onkeyup="desbloquearBotao()" type="password" class="form-control" id="repwd" name="repwd">
 		</div>
 		
-		<p id="preencha" class="bg-warning"></p>
+		<div id="preencha" class="alert alert-warning" role="alert"></div>
 		<button id="botao" type="submit" class="btn btn-success btn-block">Cadastrar</button>
 
 	</form>

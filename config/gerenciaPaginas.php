@@ -9,6 +9,10 @@
 			# PÁGINA DE LISTAGEM DE USUÁRIOS
 			include('paginas/listarUsuarios.php');
 			break;
+		case 'EditarUsuario':
+			# PÁGINA DE LISTAGEM DE USUÁRIOS
+			include('paginas/editarUsuario.php');
+			break;
 		
 
 		# PÁGINAS DE SISTEMA
